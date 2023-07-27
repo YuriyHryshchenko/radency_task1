@@ -12,16 +12,23 @@ const displayNotes = (notes) => {
 			}
 			const col = document.createElement('div');
 			col.classList.add('col', 'border-end', 'border-warning');
-			col.textContent = note[key];
+			if(key === 'date') {
+				for(const date of note[key]){
+					col.textContent += `${date} `;
+				}
+			} else {
+				col.textContent = note[key];
+			}
+
 			row.appendChild(col);
 		}	
 
 		const col = document.createElement('div');
 		col.classList.add('col');
 
-		addButton('btn-primary', '../../img/edit.svg', 'Edit Icon', col);
+		addButton('btn-primary', '../../img/edit.svg', 'Edit Icon', col, 'edit-img');
 		addButton('btn-success', '../../img/archive.svg', 'Archive Icon', col);
-		addButton('btn-danger', '../../img/delete.svg', 'Delete Icon', col);
+		addButton('btn-danger', '../../img/delete.svg', 'Delete Icon', col, 'delete-img');
 
 		row.appendChild(col);
 
@@ -29,14 +36,17 @@ const displayNotes = (notes) => {
 	}
 }
 
-function addButton(btnClass, imgSrc, imgAlt, col){
+function addButton(btnClass, imgSrc, imgAlt, col, className){
 	const button = document.createElement('button');
 	button.type = 'button';
 
 	button.classList.add('btn', 'me-1', btnClass);
-
+	if(className === 'edit-img') {
+		button.setAttribute('data-bs-toggle', 'modal');
+		button.setAttribute('data-bs-target', '#editNote')
+	}
 	const img = document.createElement('img');
-	img.classList.add('delete-img');
+	img.classList.add(className);
 	img.src = imgSrc;
 	img.alt = imgAlt;
 

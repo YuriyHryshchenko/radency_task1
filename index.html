@@ -60,7 +60,7 @@
 		<div class="modal-dialog">
 		  <div class="modal-content">
 			 <div class="modal-header">
-				<h2 class="modal-title fs-5" id="exampleModalLabel">Note</h2>
+				<h2 class="modal-title fs-5" id="exampleModalLabel">Add note</h2>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			 </div>
 			 <div class="modal-body">
@@ -87,7 +87,47 @@
 				 </div>
 				 			 <div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-				<button type="submit" class="btn btn-primary">Send message</button>
+				<button type="submit" class="btn btn-primary">Add note</button>
+			 </div>
+				</form>
+			 </div>
+
+		  </div>
+		</div>
+	 </div>
+
+   <div class="modal fade" id="editNote" tabindex="-1" aria-labelledby="editNote" aria-hidden="true">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+			 <div class="modal-header">
+				<h2 class="modal-title fs-5" id="exampleModalLabel">Edit note</h2>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			 </div>
+			 <div class="modal-body">
+				<form class="edit-note-form">
+				  <div class="mb-3">
+					 <label for="edit-note-name" class="col-form-label">Name:</label>
+					 <input type="text" class="form-control" id="edit-note-name">
+				  </div>
+				  <div class="mb-3">
+					<label for="edit-note-category" class="col-form-label">Category:</label>
+					<select class="form-control" id="edit-note-category">
+						<option value="Task">Task</option>
+						<option value="Random Thought">Random Thought</option>
+						<option value="Idea">Idea</option>
+					</select>
+				 </div>
+				  <div class="mb-3">
+					 <label for="edit-note-content" class="col-form-label">Content:</label>
+					 <textarea class="form-control" id="edit-note-content"></textarea>
+				  </div>
+				  <div class="mb-3">
+					<label for="edit-note-date" class="col-form-label">Date:</label>
+					<input type="date" class="form-control" id="edit-note-date"></input>
+				 </div>
+				 			 <div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				<button type="sumbit" class="btn btn-primary edit-form-button">Edit note</button>
 			 </div>
 				</form>
 			 </div>

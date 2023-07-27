@@ -12,7 +12,6 @@ const addNote = (formSelector, nameSelector, taskSelector, contentSelector, date
 		const content = document.querySelector(contentSelector).value;
 		const date = document.querySelector(dateSelector).value;
 
-	
 		const timeOfCreation = new Date().toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'});
 		
 		const note = {

@@ -1,6 +1,7 @@
 import displayNotes from "../displayNotes/index.js";
+import displaySummaryTable from "../displaySummaryTable/index.js";
 
-const editNote = (notes) => {
+const editNote = (notes, archivedNotes) => {
 	const form = document.querySelector('.edit-note-form');
 	const name = document.querySelector('#edit-note-name');
 	const category = document.querySelector('#edit-note-category');
@@ -34,7 +35,8 @@ const editNote = (notes) => {
 		}
 
 		notes.splice(index, 1, note);
-		displayNotes(notes);
+		displayNotes('.notes-container', notes);
+		displaySummaryTable(notes, archivedNotes);
 		form.reset();
 	})
 }

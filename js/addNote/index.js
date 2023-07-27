@@ -1,8 +1,9 @@
 
 import deleteNote from "../deleteNote/index.js";
 import displayNotes from "../displayNotes/index.js";
+import displaySummaryTable from "../displaySummaryTable/index.js";
 
-const addNote = (formSelector, nameSelector, taskSelector, contentSelector, dateSelector, notes) => {
+const addNote = (formSelector, nameSelector, taskSelector, contentSelector, dateSelector, notes, archivedNotes) => {
 	const form = document.querySelector(formSelector);
 
 	form.addEventListener('submit', (e) => {
@@ -24,7 +25,8 @@ const addNote = (formSelector, nameSelector, taskSelector, contentSelector, date
 		};
 
 		notes.push(note);
-		displayNotes(notes);
+		displayNotes('.notes-container', notes);
+		displaySummaryTable(notes, archivedNotes);
 		form.reset();
 	})
 }

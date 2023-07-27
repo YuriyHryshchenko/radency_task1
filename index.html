@@ -21,8 +21,8 @@
         <div class="col border-end">Content</div>
         <div class="col border-end">Dates</div>
         <div class="col">
-          <button type="button" class="btn btn-success">
-            <img src="./img/archive.svg" alt="Archive Icon" />
+          <button type="button" class="btn btn-success archive-header-button">
+            <img src="./img/archive.svg" alt="Archive Icon" class="archive-header-img"/>
           </button>
         </div>
       </div>
@@ -48,6 +48,7 @@
         </div>
       </div>
     </div>
+
 	 <div class="container text-center mt-3">
 		<div class="row">
 			<div class="col">
@@ -55,6 +56,66 @@
 			</div>
 		</div>
 	 </div>
+
+	 <div class="container text-center text-light bg-secondary py-2 mt-5 archive-notes-header d-none">
+      <div class="row">
+        <div class="col border-end">Name</div>
+        <div class="col border-end">Created</div>
+        <div class="col border-end">Category</div>
+        <div class="col border-end">Content</div>
+        <div class="col border-end">Dates</div>
+        <div class="col">
+          Unarchive note
+        </div>
+      </div>
+    </div>
+
+	 <div class="container text-center text-dark bg-body-secondary py-2 mt-2 archived-notes-container d-none">
+      <div class="row border-top border-bottom border-warning py-3">
+        <div class="col border-end border-warning">Shopping</div>
+        <div class="col border-end border-warning">April 20, 2021</div>
+        <div class="col border-end border-warning">Task</div>
+        <div class="col border-end border-warning">Tomatoes, bread</div>
+        <div class="col border-end border-warning"></div>
+        <div class="col">
+          <button type="button" class="btn btn-primary">
+            <img src="./img/edit.svg" alt="Edit Icon" />
+          </button>
+          <button type="button" class="btn btn-success">
+            <img src="./img/archive.svg" alt="Archive Icon" />
+          </button>
+          <button type="button" class="btn btn-danger">
+            <img src="./img/delete.svg" alt="Delete Icon" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+	 <div class="container text-center text-light bg-secondary py-2 mt-5 summary-table">
+      <div class="row">
+        <div class="col border-end">Note Category</div>
+        <div class="col border-end">Active</div>
+        <div class="col border-end">Archived</div>
+      </div>
+    </div>
+
+	 <div class="container text-center text-dark bg-body-secondary py-2 mt-2 summary-container">
+		<div class="row border-top border-bottom border-warning py-3 summary-task-row">
+			<div class="col border-end border-warning">Task</div>
+			<div class="col border-end border-warning summary-task-active"></div>
+			<div class="col summary-task-archived"></div>
+		</div>
+		<div class="row border-bottom border-warning py-3 summary-idea-row">
+			<div class="col border-end border-warning">Idea</div>
+			<div class="col border-end border-warning summary-idea-active"></div>
+			<div class="col summary-idea-archived"></div>
+		</div>
+		<div class="row border-warning py-3 summary-thought-row">
+			<div class="col border-end border-warning">Random Thought</div>
+			<div class="col border-end border-warning summary-thought-active"></div>
+			<div class="col summary-thought-archived"></div>
+		</div>
+    </div>
 
 	 <div class="modal fade" id="modalNote" tabindex="-1" aria-labelledby="modalNote" aria-hidden="true">
 		<div class="modal-dialog">

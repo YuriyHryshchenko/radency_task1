@@ -1,17 +1,20 @@
+
 import displayNotes from "../displayNotes/index.js";
 import displaySummaryTable from "../displaySummaryTable/index.js";
-
-const deleteNote = (notes, archivedNotes) => {
+const archiveNote = (notes, archivedNotes) => {
 	const noteContainer = document.querySelector('.notes-container');
 	noteContainer.addEventListener('click', e => {
-		if(e.target.matches('.btn-danger') || e.target.matches('.delete-img')) {
+		if(e.target.matches('.btn-success') || e.target.matches('.archive-img')) {
 			const row = e.target.closest('.row');
 			const rowId = row.dataset.id;
-			notes.splice(notes.indexOf(notes.find(item => item.id === +rowId)), 1)
+			const noteIndex = notes.findIndex(item => item.id === +rowId);
+			archivedNotes.push(notes[noteIndex])
+			notes.splice(noteIndex, 1)
 			displayNotes('.notes-container', notes);
+			displayNotes('.archived-notes-container', archivedNotes, true);
 			displaySummaryTable(notes, archivedNotes);
 		}
 	})
 }
 
-export default deleteNote;
+export default archiveNote;

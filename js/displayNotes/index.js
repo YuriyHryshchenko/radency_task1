@@ -1,5 +1,5 @@
-const displayNotes = (notes) => {
-	const notesContainer = document.querySelector('.notes-container');
+const displayNotes = (selector, notes, isArchiveDisplay = false) => {
+	const notesContainer = document.querySelector(selector);
 	notesContainer.innerHTML = '';
 	for(const note of notes) {
 		const row = document.createElement('div');
@@ -26,9 +26,13 @@ const displayNotes = (notes) => {
 		const col = document.createElement('div');
 		col.classList.add('col');
 
-		addButton('btn-primary', '../../img/edit.svg', 'Edit Icon', col, 'edit-img');
-		addButton('btn-success', '../../img/archive.svg', 'Archive Icon', col);
-		addButton('btn-danger', '../../img/delete.svg', 'Delete Icon', col, 'delete-img');
+		if(isArchiveDisplay) {
+			addButton('btn-danger', '../../img/archive.svg', 'Archive Icon', col, 'archive-img');
+		} else {
+			addButton('btn-primary', '../../img/edit.svg', 'Edit Icon', col, 'edit-img');
+			addButton('btn-success', '../../img/archive.svg', 'Archive Icon', col, 'archive-img');
+			addButton('btn-danger', '../../img/delete.svg', 'Delete Icon', col, 'delete-img');
+		}
 
 		row.appendChild(col);
 
